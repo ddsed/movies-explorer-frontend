@@ -1,0 +1,51 @@
+.promo {
+    min-height: 513px;
+    padding: 20px 40px 0;
+}
+
+.promo__container {
+    border-radius: 10px;
+    background: #272727;
+
+    min-height: 493px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.promo__title{
+    text-align: center;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -2px;
+
+    margin: 0;
+    margin: 160px 0 151px;
+}
+
+.promo__container-button {
+    display: flex;
+    gap: 10px;
+}
+
+.promo__button{
+    width: 96px;
+    height: 36px;
+    text-align: center;
+
+    border: none;
+    border-radius: 10px;
+    font: inherit;
+    color: inherit;
+    background-color: #303030;
+  
+    box-sizing: border-box;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}

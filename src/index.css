@@ -4,6 +4,7 @@
 @import url(./components/Header/Header.css);
 
 @import url(./components/NavBar/NavBar.css);
+@import url(./components/Promo/Promo.css);
 
 .page {
   -webkit-text-size-adjust: 100%;
@@ -15,4 +16,7 @@
   text-rendering: optimizeLegibility;
   background-color: #202020;
   color: #FFFFFF;
+
+  min-height: 100vh;
+  margin: 0 auto;
 }

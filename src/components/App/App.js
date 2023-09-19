@@ -3,6 +3,7 @@ import './App.css';
 import '../../index.css';
 import Header from '../Header/Header';
 import NavBar from '../NavBar/NavBar';
+import Main from '../Main/Main';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <Header>
         <NavBar/>
       </Header>
+      <Main/>
     </div>
   );
 }
