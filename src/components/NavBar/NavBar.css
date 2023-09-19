@@ -1,0 +1,44 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.navbar__link-sign-up {
+    color: #FFF;
+
+    text-decoration: none;
+}
+
+.navbar__link-sign-in {
+    width: 76px;
+    height: 32px;
+    border-radius: 3px;
+    background: #3DDC84;
+
+    color: #000;
+
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 420px) {
+    .navbar{
+        gap: 14px;
+
+        font-size: 10px;
+    }
+
+    .navbar__link-sign-in {
+        width: 54px;
+        height: 26px;
+    }
+}
