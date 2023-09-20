@@ -4,7 +4,7 @@ import stroke from '../../images/stroke-landing.svg';
 function AboutProject() {
     return (
       <section className="about-project">
-        <h2 className="about-project__title">О проекте</h2>
+        <h3 className="about-project__section-name">О проекте</h3>
         <img src={stroke} className="about-project__stroke" alt="Подчеркивание секции" />
         <div className="about-project__grid-description">
             <h3 className="about-project__text">Дипломный проект включал 5 этапов</h3>

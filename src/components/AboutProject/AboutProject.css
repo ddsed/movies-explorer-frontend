@@ -9,7 +9,7 @@
     padding: 0 70px;
 }
 
-.about-project__title {
+.about-project__section-name {
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
@@ -132,7 +132,7 @@
         padding: 0 18px;
     }
 
-    .about-project__title {
+    .about-project__section-name {
         font-size: 18px;
         letter-spacing: -0.72px;
     }
