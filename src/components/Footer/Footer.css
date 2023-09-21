@@ -1,0 +1,126 @@
+.footer {
+    min-height: 172px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__title {
+    color: #8B8B8B;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+
+    margin: 0;
+    margin-top: 106px;
+}
+
+.footer__stroke {
+    width: calc(100vw - 140px);
+    height: 1px;
+    margin: 20px 0;
+
+}
+
+.footer__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100vw - 140px);
+    margin-bottom: 20px;
+}
+
+.footer__year {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.footer__links{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+}
+
+.footer__link {
+    text-decoration: none;
+    color: white;
+
+    text-align: right;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 20px;
+}
+
+.footer__link:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 835px) {
+    .footer__title {
+        margin-top: 97px;
+    }
+
+    .footer__stroke {
+        width: calc(100vw - 60px);
+    }
+
+    .footer__container {
+        width: calc(100vw - 60px);
+    }
+
+    @media screen and (max-width: 550px) {
+        .footer__stroke {
+            width: calc(100vw - 20px);
+        }
+
+        .footer__container {
+            width: calc(100vw - 20px);
+        }
+    }
+
+    @media screen and (max-width: 420px) {
+        .footer {
+            min-height: 253px;
+        }
+
+        .footer__title {
+            font-size: 12px;
+        }
+
+        .footer__stroke {
+            margin: 21px 0 26px;
+        }
+
+        .footer__container {
+            flex-direction: column-reverse;
+        }
+
+        .footer__links {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 8px;
+        }
+
+        .footer__year {
+            color: #8B8B8B;
+            font-size: 12px;
+
+            margin-top: 30px;
+        }
+
+        .footer__link {
+            text-align: center;
+            font-size: 12px;
+            margin: 0 0 12px;
+        }
+        
+    }
+    
+}

@@ -4,6 +4,7 @@ import '../../index.css';
 import Header from '../Header/Header';
 import NavBar from '../NavBar/NavBar';
 import Main from '../Main/Main';
+import Footer from '../Footer/Footer';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <NavBar />
       </Header>
       <Main />
+      <Footer />
     </div>
   );
 }

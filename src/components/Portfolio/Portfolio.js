@@ -1,6 +1,5 @@
 import React from 'react';
 import stroke from '../../images/stroke-landing.svg';
-//import strokeLinks from '../../images/stroke-links.svg';
 import arrow from '../../images/arrow.svg';
 
 function Portfolio() {
