@@ -20,7 +20,9 @@ function Register() {
                 
                 <label className="register__input-label">Пароль</label>
                 <input className="register__input" value="******" type="password" name="password" id="password" />
-                <button className="register__button" type="submit">Войти</button>
+                <span className='register__input-error'>Что-то пошло не так...</span>
+
+                <button className="register__button" type="submit">Зарегистрироваться</button>
             </form>
             <div className='register__container'>
                 <p className='register__question'>Уже зарегистрированы?</p>
