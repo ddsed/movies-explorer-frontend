@@ -8,6 +8,7 @@ import NavBar from '../NavBar/NavBar';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import Main from '../Main/Main';
+import Movies from '../Movies/Movies';
 import Footer from '../Footer/Footer';
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
       <Routes>
         <Route path="/signup" element={ <Register /> }/>
         <Route path="/signin" element={ <Login /> }/>
-        <Route path="/" element={ <Main loggedIn={isLoggedIn} />}/>
+        <Route path="/" element={ <Main loggedIn={isLoggedIn} /> }/>
+        <Route path="/movies" element={ <Movies /> }/>
       </Routes>
       <Footer />
     </div>

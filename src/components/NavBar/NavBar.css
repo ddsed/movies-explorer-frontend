@@ -40,6 +40,66 @@
     cursor: pointer;
 }
 
+.navbar__links-container {
+    margin-right: calc(100vw/2 - 308px);
+}
+
+.navbar__link-movies {
+    margin-right: 16px;
+    text-decoration: none;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.navbar__link-movies:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.navbar__link-saved-movies {
+    text-decoration: none;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.navbar__link-saved-movies:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.navbar__link-profile {
+    width: 100px;
+    height: 32px;
+
+    border-radius: 20px;
+    background: #313131;
+
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 8px;
+    box-sizing: border-box;
+    
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+@media screen and (max-width: 835px) {
+    .navbar__link-profile {
+        display: none;
+    }
+    .navbar__links-container {
+        display: none;
+     }
+}
+
 @media screen and (max-width: 420px) {
     .navbar{
         gap: 14px;

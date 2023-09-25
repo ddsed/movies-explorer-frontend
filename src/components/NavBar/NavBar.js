@@ -8,8 +8,10 @@ function NavBar({loggedIn}) {
       { 
         loggedIn ?
         <>
-        <NavLink to="/movies" className="navbar__link-movies">Фильмы</NavLink>
-        <NavLink to="/saved-movies" className="navbar__link-saved-movies">Сохраненные фильмы</NavLink>
+        <div className="navbar__links-container">
+          <NavLink to="/movies" className="navbar__link-movies">Фильмы</NavLink>
+          <NavLink to="/saved-movies" className="navbar__link-saved-movies">Сохраненные фильмы</NavLink>
+        </div>
         <NavLink to="/profile" className="navbar__link-profile">Аккаунт</NavLink>
         </>
         : 
