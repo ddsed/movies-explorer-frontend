@@ -9,6 +9,7 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
+import Profile from '../Profile/Profile';
 import Footer from '../Footer/Footer';
 
 function App() {
@@ -19,6 +20,11 @@ function App() {
   useEffect(() => {
     location.pathname === '/' ? setIsLoggedIn(false) : setIsLoggedIn(true)
   })
+
+  const user = {
+    name: "Виталий",
+    email: "pochta@yandex.ru"
+  }
 
   return (
     <div className="page">
@@ -32,6 +38,7 @@ function App() {
         <Route path="/signin" element={ <Login /> }/>
         <Route path="/" element={ <Main loggedIn={isLoggedIn} /> }/>
         <Route path="/movies" element={ <Movies /> }/>
+        <Route path="/profile" element={<Profile user={user} /> }/>
       </Routes>
       <Footer />
     </div>

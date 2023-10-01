@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import burgerMenu from '../../images/burger-menu.svg';
 import './NavBar.css';
 
 function NavBar({loggedIn}) {
@@ -13,6 +14,7 @@ function NavBar({loggedIn}) {
           <NavLink to="/saved-movies" className="navbar__link-saved-movies">Сохраненные фильмы</NavLink>
         </div>
         <NavLink to="/profile" className="navbar__link-profile">Аккаунт</NavLink>
+        <img src={burgerMenu} className='navbar__burger-menu' alt='Иконка меню' />
         </>
         : 
         <>

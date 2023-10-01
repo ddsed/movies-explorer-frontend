@@ -5,7 +5,7 @@ import stroke from '../../images/stroke-landing.svg';
 function Footer() {
     const location = useLocation();
     return (
-        location.pathname === "/signin" || location.pathname === "/signup" ?
+        location.pathname === "/signin" || location.pathname === "/signup" || location.pathname === "/profile"?
         (<></>)
         :
         <>

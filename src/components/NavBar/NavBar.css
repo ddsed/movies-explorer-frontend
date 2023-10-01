@@ -91,13 +91,24 @@
     line-height: 16px;
 }
 
+.navbar__burger-menu {
+    display: none;
+}
+
 @media screen and (max-width: 835px) {
     .navbar__link-profile {
         display: none;
     }
+
     .navbar__links-container {
         display: none;
-     }
+    }
+
+    .navbar__burger-menu {
+        display: block;
+        width: 44px;
+        height: 44px;
+    }
 }
 
 @media screen and (max-width: 420px) {
