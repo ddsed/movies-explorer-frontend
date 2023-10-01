@@ -17,7 +17,7 @@ function MoviesCardList({ cards}) {
             <MoviesCard
             key={index}
             card={сard}
-            isSaved={index === 2 || index === 6}
+            isSaved={index === 1 || index === 5}
             />
             ))}
         </ul>
