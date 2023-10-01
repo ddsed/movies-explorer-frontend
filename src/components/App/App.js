@@ -26,6 +26,8 @@ function App() {
     email: "pochta@yandex.ru"
   }
 
+  const cards = Array(12).fill(null)
+
   return (
     <div className="page">
       <Header>
@@ -37,7 +39,7 @@ function App() {
         <Route path="/signup" element={ <Register /> }/>
         <Route path="/signin" element={ <Login /> }/>
         <Route path="/" element={ <Main loggedIn={isLoggedIn} /> }/>
-        <Route path="/movies" element={ <Movies /> }/>
+        <Route path="/movies" element={ <Movies cards={cards} /> }/>
         <Route path="/profile" element={<Profile user={user} /> }/>
       </Routes>
       <Footer />
