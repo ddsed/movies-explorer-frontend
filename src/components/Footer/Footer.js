@@ -5,10 +5,8 @@ import stroke from '../../images/stroke-landing.svg';
 function Footer() {
     const location = useLocation();
     return (
-        location.pathname === "/signin" || location.pathname === "/signup" || location.pathname === "/profile"?
-        (<></>)
-        :
-        <>
+        location.pathname === "/" || location.pathname === "/movies" || location.pathname === "/saved-movies" ?
+        (
         <footer className="footer">
             <p className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</p>
             <img src={stroke} className="footer__stroke" alt="Подчеркивание секции" />
@@ -25,7 +23,9 @@ function Footer() {
                 </ul>
             </div>
         </footer>
-        </>
+        )
+        :
+        (<></>)
     );
 }
 

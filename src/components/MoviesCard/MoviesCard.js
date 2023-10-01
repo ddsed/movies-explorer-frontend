@@ -15,8 +15,8 @@ function MoviesCard({ card, isSaved }) {
         {location.pathname === "/movies" &&
         <button className={`${isSaved ? 'card__button_saved' : 'card__button_to-save'}`} type='button' />
         }
-        {location.pathname === "/saved-movies" &&
-        <button className='card__button card__button_delete' type='button' />
+        {location.pathname === "/saved-movies" && isSaved &&
+        <button className='card__button_delete' type='button' />
         }
     </li>
   );

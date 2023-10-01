@@ -7,15 +7,17 @@ function Header({children}) {
   const location = useLocation();
 
   return (
-      location.pathname === "/signin" || location.pathname === "/signup" ?
-      (<></>)
-      :
+    location.pathname === '/' || location.pathname === '/movies' || location.pathname === '/saved-movies' || location.pathname === '/profile' ?
+    (
       <header className="header">
         <Link to='/' className='header__link'>
           <img src={headerLogo} className="header__logo" alt="Логотип" />
         </Link>
         {children}
       </header>
+    )
+    :
+    (<></>)
   )
 }
 

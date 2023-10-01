@@ -9,8 +9,10 @@ import Register from '../Register/Register';
 import Login from '../Login/Login';
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 import Footer from '../Footer/Footer';
+import ErrorNotFound from '../ErrorNotFound/ErrorNotFound';
 
 function App() {
 
@@ -26,7 +28,7 @@ function App() {
     email: "pochta@yandex.ru"
   }
 
-  const cards = Array(12).fill(null)
+  const cards = Array(12).fill(null);
 
   return (
     <div className="page">
@@ -36,11 +38,13 @@ function App() {
         />
       </Header>
       <Routes>
-        <Route path="/signup" element={ <Register /> }/>
-        <Route path="/signin" element={ <Login /> }/>
-        <Route path="/" element={ <Main loggedIn={isLoggedIn} /> }/>
-        <Route path="/movies" element={ <Movies cards={cards} /> }/>
-        <Route path="/profile" element={<Profile user={user} /> }/>
+        <Route path="/signup" element={ <Register />}/>
+        <Route path="/signin" element={ <Login />}/>
+        <Route path="/" element={ <Main loggedIn={isLoggedIn} />}/>
+        <Route path="/movies" element={ <Movies cards={cards} />}/>
+        <Route path="/saved-movies" element={ <SavedMovies cards={cards} />}/>
+        <Route path="/profile" element={<Profile user={user} />}/>
+        <Route path="/*" element={<ErrorNotFound />}/>
       </Routes>
       <Footer />
     </div>
