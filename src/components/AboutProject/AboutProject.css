@@ -17,14 +17,11 @@
 
     align-self: flex-start;
     margin: 0;
-}
 
-.about-project__stroke {
+    border-bottom: 1px solid #DADADA;
     width: calc(100vw - 140px);
-    height: 1px;
-    color: #DADADA;
-
-    margin: 23px 0 70px;
+    margin-bottom: 70px;
+    padding-bottom: 23px;
 }
 
 .about-project__grid-description {
@@ -100,7 +97,7 @@
         padding: 0 50px;
     }
 
-    .about-project__stroke {
+    .about-project__section-name {
         width: calc(100vw - 100px);
     }
 
@@ -131,11 +128,9 @@
         font-size: 18px;
         letter-spacing: -0.72px;
         margin-top: 70px;
-    }
-
-    .about-project__stroke {
         width: calc(100vw - 36px);
-        margin: 28px 0 60px;
+        padding-bottom: 28px;
+        margin-bottom: 60px;
     }
 
     .about-project__grid-description {
@@ -156,12 +151,13 @@
     .about-project__description {
         font-size: 11px;
         line-height: 16px;
+        margin-bottom: 41px;
     }
 
     .about-project__grid-timeline {
         width: calc(100vw - 36px);
         grid-template-columns: 100px 1fr;
-        margin-top: 60px;
+        margin-top: 19px;
     }
 
     .about-project__duration {

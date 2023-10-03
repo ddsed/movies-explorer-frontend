@@ -91,11 +91,21 @@
     line-height: 16px;
 }
 
+.navbar__link-profile:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/*burger-menu*/
 .navbar__burger-menu-icon {
     display: none;
 }
 
-/*burger-menu*/
+.navbar__burger-menu-icon:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 .navbar__burger-menu {
     position: fixed;
     top: 0;
@@ -137,6 +147,11 @@
     position: absolute;
     top: 22px;
     right: 22px;
+}
+
+.navbar__close-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 .navbar__burger-menu-links {

@@ -23,7 +23,7 @@ function MoviesCardList({cards}) {
             ))
           }
         </ul>
-        <button className="cards-list__more-films-button">Еще</button>
+        <button className="cards-list__more-films-button" type="button">Еще</button>
     </section>
   );
 }

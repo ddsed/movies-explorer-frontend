@@ -14,13 +14,11 @@
 
     margin: 0;
     margin-top: 106px;
-}
 
-.footer__stroke {
+    border-bottom: 1px solid #DADADA;
     width: calc(100vw - 140px);
-    height: 1px;
-    margin: 20px 0;
-
+    padding-bottom: 20px;
+    margin-bottom: 21px;
 }
 
 .footer__container {
@@ -65,10 +63,8 @@
 @media screen and (max-width: 835px) {
     .footer__title {
         margin-top: 97px;
-    }
-
-    .footer__stroke {
         width: calc(100vw - 60px);
+        margin-bottom: 18px;
     }
 
     .footer__container {
@@ -76,7 +72,7 @@
     }
 
     @media screen and (max-width: 550px) {
-        .footer__stroke {
+        .footer__title {
             width: calc(100vw - 20px);
         }
 
@@ -92,10 +88,7 @@
 
         .footer__title {
             font-size: 12px;
-        }
-
-        .footer__stroke {
-            margin: 21px 0 26px;
+            margin-bottom: 27px;
         }
 
         .footer__container {

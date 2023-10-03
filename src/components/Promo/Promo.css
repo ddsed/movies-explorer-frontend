@@ -28,19 +28,19 @@
     max-width: 730px;
 }
 
-.promo__button-container {
+.promo__links-container {
     display: flex;
     gap: 10px;
 }
 
-.promo__button{
+.promo__link{
     width: 96px;
     height: 36px;
     text-align: center;
+    text-decoration: none;
 
     border: none;
     border-radius: 10px;
-    font: inherit;
     color: inherit;
     background-color: #303030;
   
@@ -49,10 +49,11 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 16px;
+    padding-top: 10px;
 }
 
-.promo__button:hover {
-    opacity: 0.8;
+.promo__link:hover {
+    opacity: 0.7;
     cursor: pointer;
 }
 
@@ -94,14 +95,15 @@
         margin: 220px 0 212px;
     }
 
-    .promo__button-container {
+    .promo__links-container {
         gap: 6px;
     }
 
-    .promo__button {
+    .promo__link {
         font-size: 10px;
         width: 82px;
         height: 26px;
+        padding-top: 5px;
     }
 
 }

@@ -1,6 +1,6 @@
 .portfolio {
     box-sizing: border-box;
-    min-height: 1079px;
+    min-height: 1072px;
     padding: 110px 70px 0;
 }
 
@@ -11,15 +11,11 @@
     letter-spacing: -0.88px;
 
     margin: 0;
-}
 
-.portfolio__stroke {
+    border-bottom: 1px solid #DADADA;
     width: calc(100vw - 140px);
-    height: 1px;
-}
-
-.portfolio__stroke_section {
-    margin: 23px 0 66px;
+    padding-bottom: 23px;
+    margin-bottom: 66px;
 }
 
 .portfolio__container {
@@ -72,8 +68,6 @@
     width: 270px;
     height: 327px;
     border-radius: 10px;
-
-    background-image: url('../../images/photo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -98,7 +92,15 @@
     text-decoration: none;
     display: flex;
     justify-content: space-between;
-    margin-top: 12px;
+    margin-top: 19px;
+
+    border-bottom: 1px solid #DADADA;
+    width: calc(100vw - 140px);
+    padding-bottom: 10px;
+}
+
+.portfolio__link_none {
+    border-bottom: none;
 }
 
 .portfolio__link:hover {
@@ -138,7 +140,7 @@
         padding: 90px 50px 0;
     }
 
-    .portfolio__stroke {
+    .portfolio__section-name {
         width: calc(100vw - 100px);
     }
 
@@ -167,7 +169,7 @@
     }
 
     .portfolio__link {
-        margin-top: 14px;
+        margin-top: 23px;
     }
 
     .portfolio__link-text {
@@ -189,21 +191,16 @@
 
 @media screen and (max-width: 550px) {
     .portfolio {
-        min-height: 1198px;
+        min-height: 1194px;
         padding: 70px 18px 0;
     }
 
     .portfolio__section-name {
         font-size: 18px;
-        letter-spacing: -0.72px
-    }
-
-    .portfolio__stroke {
+        letter-spacing: -0.72px;
         width: calc(100vw - 36px);
-    }
-
-    .portfolio__stroke_section {
-        margin: 28px 0 56px;
+        padding-bottom: 28px;
+        margin-bottom: 56px;
     }
 
     .portfolio__container {
@@ -244,7 +241,9 @@
     }
 
     .portfolio__link {
-        margin-top: 17px;
+        width: calc(100vw - 36px);
+        margin-top: 21px;
+        padding-bottom: 17px;
     }
 
     .portfolio__link-text {
@@ -257,9 +256,4 @@
         width: 12px;
         height: 24px;
     }
-
-    .portfolio__stroke_link {
-        margin-top: 18px;
-    }
-
 }

@@ -100,6 +100,11 @@
     line-height: 18px;
 }
 
+.search__checkbox-switch:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 835px) {
     .search__form {
         width: calc(100vw - 60px);

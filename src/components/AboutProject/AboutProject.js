@@ -1,16 +1,14 @@
 import React from 'react';
-import stroke from '../../images/stroke-landing.svg';
 
 function AboutProject() {
     return (
-      <section className="about-project">
-        <h3 className="about-project__section-name">О проекте</h3>
-        <img src={stroke} className="about-project__stroke" alt="Подчеркивание секции" />
+      <section className="about-project" id="about-project-section">
+        <h2 className="about-project__section-name">О проекте</h2>
         <div className="about-project__grid-description">
-            <p className="about-project__text">Дипломный проект включал 5 этапов</p>
+            <h3 className="about-project__text">Дипломный проект включал 5 этапов</h3>
             <p className="about-project__description">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
             
-            <p className="about-project__text about-project__text_with-margin">На выполнение диплома ушло 5 недель</p>
+            <h3 className="about-project__text about-project__text_with-margin">На выполнение диплома ушло 5 недель</h3>
             <p className="about-project__description">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
         </div>
         <div className="about-project__grid-timeline">
