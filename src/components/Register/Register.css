@@ -1,0 +1,175 @@
+.register {
+    height: 700px;
+    max-width: 396px;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.register__home-logo:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.register__home-link {
+    cursor: auto;
+}
+
+.register__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register__form-title {
+    margin: 0;
+    margin: 37px 0 18px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.register__input-label {
+    margin-top: 20px;
+
+    color: #8B8B8B;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.register__input {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    border-radius: 8px;
+    background: #2F2F2F;
+
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.register__input:focus {
+    outline: none;
+    box-shadow: 0px 0px 3px #3DDC84;
+}
+
+.register__input:last-of-type {
+    color: #EE3465;
+}
+
+.register__input-error {
+    color: #EE3465;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: normal;
+
+    margin: 10px 0 69px;
+}
+
+.register__button {
+    padding: 0;
+    border: 0;
+
+    border-radius: 3px;
+    background: #4285F4;
+
+    padding: 15px 0;
+
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.register__button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.register__container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 16px;
+}
+
+.register__question {
+    color: #8B8B8B;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    margin: 0;
+}
+
+.register__go-to-login {
+    text-decoration: none;
+    color: #4285F4;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.register__go-to-login:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .register {
+        height: 1024px;
+        padding-top: 232px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .register {
+        height: 780px;
+        padding-top: 56px;
+        max-width: 260px;
+    }
+
+    .register__home-link {
+        align-self: center;
+    }
+
+    .register__form-title {
+        align-self: center;
+        margin: 45px 0 61px;
+    }
+
+    .register__input-error {
+        margin-bottom: 157px;
+    }
+
+    .register__button {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .register__container {
+        gap: 7px;
+    }
+
+    .register__question {
+        font-size: 12px;
+    }
+
+    .register__go-to-login {
+        font-size: 12px;
+    }
+}

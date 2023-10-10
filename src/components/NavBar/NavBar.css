@@ -1,0 +1,263 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.navbar__link-sign-up {
+    color: #FFF;
+
+    text-decoration: none;
+}
+
+.navbar__link-sign-in {
+    width: 76px;
+    height: 32px;
+    border-radius: 3px;
+    background: #3DDC84;
+
+    color: #000;
+
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar__link-sign-up:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.navbar__link-sign-in:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.navbar__links-container {
+    margin-right: calc(100vw/2 - 308px);
+}
+
+.navbar__link-movies {
+    margin-right: 16px;
+    text-decoration: none;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.navbar__link-movies:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.navbar__link-saved-movies {
+    text-decoration: none;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.navbar__link-saved-movies:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.navbar__link-profile {
+    width: 100px;
+    height: 32px;
+
+    border-radius: 20px;
+    background: #313131;
+
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 8px;
+    box-sizing: border-box;
+    
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.navbar__link-profile:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/*burger-menu*/
+.navbar__burger-menu-icon {
+    display: none;
+}
+
+.navbar__burger-menu-icon:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.navbar__burger-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+
+    display: flex;
+    justify-content: end;
+    z-index: 1;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.1s ease 0s;
+}
+  
+.navbar__burger-menu_opened {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navbar__burger-menu-container {
+    position: relative;
+    background: #202020;
+
+    width: 520px;
+    box-sizing: border-box;
+    padding: 160px 0 90px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__close-button {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+}
+
+.navbar__close-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.navbar__burger-menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar__burger-menu-link {
+    text-decoration: none;
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+
+    margin-bottom: 27px;
+}
+
+.navbar__burger-menu-link_active {
+    border-bottom: 2px solid white;
+    padding-bottom: 3px;
+    margin-bottom: 25px;
+}
+
+.navbar__burger-menu-link:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.navbar__burger-menu-profile {
+    width: 100px;
+    height: 32px;
+
+    border-radius: 20px;
+    background: #313131;
+
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 8px;
+    box-sizing: border-box;
+    
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.navbar__burger-menu-profile:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 835px) {
+    .navbar__link-profile {
+        display: none;
+    }
+
+    .navbar__links-container {
+        display: none;
+    }
+
+    .navbar__burger-menu-icon {
+        display: block;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media screen and (max-width: 520px){
+    .navbar__burger-menu {
+        width: 320px;
+    }
+    
+    .navbar__burger-menu-container {
+        width: 320px;
+
+        padding: 144px 0 46px;
+    }
+
+    .navbar__close-button {
+        top: 13px;
+        right: 13px;
+    }
+
+    .navbar__burger-menu-link {
+        margin-bottom: 24px;
+    }
+
+    .navbar__burger-menu-link_active {
+        margin-bottom: 22px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .navbar{
+        gap: 14px;
+
+        font-size: 10px;
+    }
+
+    .navbar__link-sign-in {
+        width: 54px;
+        height: 26px;
+    }
+}
