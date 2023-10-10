@@ -7,6 +7,15 @@
     margin: auto;
 }
 
+.login__home-logo:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.login__home-link {
+    cursor: auto;
+}
+
 .login__form {
     display: flex;
     flex-direction: column;

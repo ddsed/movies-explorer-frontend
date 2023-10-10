@@ -8,7 +8,7 @@ function Login() {
     return(
         <main>
             <section className="login">
-                <Link to='/' className='login__home-link'>
+                <Link to='/' className="login__home-link">
                     <img src={headerLogo} className="login__home-logo" alt="Логотип" />
                 </Link>
                 <form className="login__form">

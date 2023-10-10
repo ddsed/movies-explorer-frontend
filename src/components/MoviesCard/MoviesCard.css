@@ -39,7 +39,7 @@
     margin: 0;
 }
 
-.card__button_saved {
+.card__button-saved {
     background: url(../../images/button-saved.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,12 +54,12 @@
     right: 14px;
 }
 
-.card__button_saved:hover {
+.card__button-saved:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.card__button_to-save {
+.card__button-to-save {
     background: url(../../images/button-to-save.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -74,12 +74,12 @@
     right: 14px;
 }
 
-.card__button_to-save:hover {
+.card__button-to-save:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.card__button_delete {
+.card__button-delete {
     display: none;
     background: url(../../images/button-delete.svg);
     background-repeat: no-repeat;
@@ -95,7 +95,7 @@
     right: 14px;
 }
 
-.card__button_delete:hover {
+.card__button-delete:hover {
     display: block;
     cursor: pointer;
     opacity: 0.8;
@@ -131,17 +131,17 @@
         font-size: 12px;
     }
 
-    .card__button_saved {
+    .card__button-saved {
         top: 10px;
         right: 10px;
     }
 
-    .card__button_to-save {
+    .card__button-to-save {
         top: 10px;
         right: 10px;
     }
 
-    .card__button_delete {
+    .card__button-delete {
         display: block;
     
         position: absolute;

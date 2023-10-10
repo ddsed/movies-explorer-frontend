@@ -7,6 +7,15 @@
     margin: auto;
 }
 
+.register__home-logo:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.register__home-link {
+    cursor: auto;
+}
+
 .register__form {
     display: flex;
     flex-direction: column;

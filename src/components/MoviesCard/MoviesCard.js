@@ -13,10 +13,10 @@ function MoviesCard({ card, isSaved }) {
             <p className="card__duration">{card.duration}</p>
         </div>
         {location.pathname === "/movies" &&
-        <button className={`${isSaved ? "card__button_saved" : "card__button_to-save"}`} type="button" />
+        <button className={`${isSaved ? "card__button-saved" : "card__button-to-save"}`} type="button" />
         }
         {location.pathname === "/saved-movies" && isSaved &&
-        <button className="card__button_delete" type="button" />
+        <button className="card__button-delete" type="button" />
         }
     </li>
   );
