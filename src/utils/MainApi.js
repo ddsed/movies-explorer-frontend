@@ -49,9 +49,9 @@ class MainApi {
           duration: data.duration,
           year: data.year,
           description: data.description,
-          image: data.image,
+          image: 'https://api.nomoreparties.co' + data.image.url,
           trailerLink: data.trailerLink,
-          thumbnail: data.thumbnail,
+          thumbnail: 'https://api.nomoreparties.co' + data.image.formats.thumbnail.url,
           movieId: data.id,
           nameRU: data.nameRU,
           nameEN: data.nameEN,
@@ -59,9 +59,9 @@ class MainApi {
       }).then(res => this._getJson(res));
   }
 
-  deleteCard(id) {
+  deleteCard(cardId) {
       const token = localStorage.getItem("jwt");
-      return fetch(`${this._baseURL}/movies/${id}`, {
+      return fetch(`${this._baseURL}/movies/${cardId}`, {
           method: 'DELETE',
           headers: {
           authorization: `Bearer ${token}`,
@@ -69,7 +69,7 @@ class MainApi {
       }).then(res => this._getJson(res));
   }
 
-  getSavedMovies() {
+  getCards() {
       const token = localStorage.getItem("jwt");
       return fetch(`${this._baseURL}/movies`, {
           method: 'GET',
@@ -77,10 +77,6 @@ class MainApi {
           authorization: `Bearer ${token}`,
           },
       }).then(res => this._getJson(res));
-  }
-
-  setToken(token) {
-    this._token = `Bearer ${token}`;
   }
 }
   

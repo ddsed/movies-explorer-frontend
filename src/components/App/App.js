@@ -6,6 +6,7 @@ import '../../index.css';
 
 import apiAuth from '../../utils/AuthApi';
 import mainApi from '../../utils/MainApi';
+//import moviesApi from '../../utils/MoviesApi';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
@@ -30,7 +31,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({ name: '', email: '' }); 
   const [isLoading, setIsLoading] = useState(false);
   
-  const cards = Array(12).fill(null);
+  const [savedMovies, setSavedMovies] = useState([]);
 
   //Token
   useEffect(() => {
@@ -41,8 +42,19 @@ function App() {
       })
       .catch((err) => console.log(err))
       .finally(() => setIsLoading(false));
-  }, []);
+  }, [isLoggedIn]);
 
+  useEffect(() => {
+    mainApi
+      .getCards()
+      .then((cardsData) => {
+        setSavedMovies(cardsData.reverse())
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+      .finally(() => setIsLoading(false));
+  }, [isLoggedIn]);
 
 	useEffect(() => {
 	const jwt = localStorage.getItem("jwt");
@@ -118,6 +130,29 @@ function App() {
       .finally(() => setIsLoading(false));
   }
 
+  //cards
+  function handleCardSave(card) {
+    mainApi
+      .addNewCard(card)
+      .then((newMovie) => {
+        setSavedMovies([newMovie, ...savedMovies])
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  function handleCardDelete(card) {
+    mainApi
+      .deleteCard(card._id)
+      .then(() => {
+        setSavedMovies((state) => state.filter((item) => item._id !== card._id))
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
   return (
     isLoading ? <Preloader /> :
     <CurrentUserContext.Provider value={{ currentUser }}>
@@ -129,8 +164,23 @@ function App() {
           <Route path="/signup" element={ <Register registerUser={registerUser} />}/>
           <Route path="/signin" element={ <Login loginUser={loginUser}/>}/>
           <Route path="/" element={<Main loggedIn={isLoggedIn}/> }/>
-          <Route path="/movies" element={ <ProtectedRoute element={Movies} cards={cards} loggedIn={isLoggedIn} />}/>
-          <Route path="/saved-movies" element={ <ProtectedRoute element={SavedMovies} cards={cards} loggedIn={isLoggedIn} />}/>
+          <Route path="/movies" 
+            element={ <ProtectedRoute 
+              element={Movies} 
+              savedMovies={savedMovies}
+              loggedIn={isLoggedIn}
+              onDeleteCard={handleCardDelete}
+              component={Movies}
+              handleSaveMovie={handleCardSave} 
+            />}
+          />
+          <Route path="/saved-movies" element={ <ProtectedRoute 
+            element={SavedMovies} 
+            loggedIn={isLoggedIn} 
+            savedMovies={savedMovies}
+            onDeleteCard={handleCardDelete}
+            />}
+          />
           <Route path="/profile" element={ <ProtectedRoute element={Profile} loggedIn={isLoggedIn} updateProfile={updateProfile} logOut={logOut} currentUser={currentUser} />}/>
           <Route path="/*" element={<ErrorNotFound />}/>
         </Routes>
