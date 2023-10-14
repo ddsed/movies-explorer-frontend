@@ -6,7 +6,6 @@ import '../../index.css';
 
 import apiAuth from '../../utils/AuthApi';
 import mainApi from '../../utils/MainApi';
-//import moviesApi from '../../utils/MoviesApi';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
