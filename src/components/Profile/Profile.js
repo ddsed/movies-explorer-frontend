@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import CurrentUserContext from '../../contexts/CurrentUserContext';
 
 
-function Profile({ logOut, updateProfile, currentUser }) {
+function Profile({ logOut, updateProfile }) {
+    const currentUser = useContext(CurrentUserContext);
 
     const [name, setName] = useState(currentUser.name);
     const [email, setEmail] = useState(currentUser.email);
@@ -23,7 +25,7 @@ function Profile({ logOut, updateProfile, currentUser }) {
     function handleSubmit(e) {
         e.preventDefault();
       
-        updateProfile({ name, email });
+        updateProfile({ name, email});
     }
 
     return (
@@ -41,11 +43,11 @@ function Profile({ logOut, updateProfile, currentUser }) {
                             <input className="profile__input" placeholder="Ваш email" value={email || ''} onChange={handleChangeEmail} />
                         </div>
                     </div>
+                    <div className="profile__links">
+                        <button className="profile__edit" type="submit">Редактировать</button>
+                        <Link to="/" className="profile__exit" onClick={logOut}>Выйти из аккаунта</Link >
+                    </div>
                 </form>
-                <div className="profile__links">
-                    <button className="profile__edit" type="button">Редактировать</button>
-                    <Link to="/" className="profile__exit" onClick={logOut}>Выйти из аккаунта</Link >
-                </div>
             </section>
         </main>
     )

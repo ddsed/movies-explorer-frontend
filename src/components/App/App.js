@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 
 import './App.css';
 import '../../index.css';
@@ -22,6 +22,7 @@ import ErrorNotFound from '../ErrorNotFound/ErrorNotFound';
 import Preloader from '../Preloader/Preloader';
 
 function App() {
+  const location = useLocation();
 
   const navigate = useNavigate();
 
@@ -34,40 +35,46 @@ function App() {
 
   //Token
   useEffect(() => {
-    mainApi
-      .getCurrentUser()
-      .then((data) => {
-        setCurrentUser({ name: data.name, email: data.email });
-      })
-      .catch((err) => console.log(err))
-      .finally(() => setIsLoading(false));
+    if(isLoggedIn) {
+      mainApi
+        .getCurrentUser()
+        .then((data) => {
+          setCurrentUser({ name: data.name, email: data.email });
+        })
+        .catch((err) => console.log(err))
+        .finally(() => setIsLoading(false));
+    }
   }, [isLoggedIn]);
 
   useEffect(() => {
-    mainApi
-      .getCards()
-      .then((cardsData) => {
-        setSavedMovies(cardsData.reverse())
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-      .finally(() => setIsLoading(false));
+    if(isLoggedIn) {
+      mainApi
+        .getCards()
+        .then((cardsData) => {
+          setSavedMovies(cardsData.reverse())
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+        .finally(() => setIsLoading(false));
+    }
   }, [isLoggedIn]);
 
 	useEffect(() => {
 	const jwt = localStorage.getItem("jwt");
     if (jwt) {
+      setIsLoading(true);
       apiAuth
       .checkToken(jwt)
       .then((data) => {
         if (data) {
         setIsLoggedIn(true);
         setCurrentUser({ name: data.name, email: data.email });
-        navigate("/movies", { replace: true });
+        navigate(location, { replace: true });
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => setIsLoading(false));
     }
 	}, []);
 
@@ -85,9 +92,7 @@ function App() {
       .catch((err) => {
         console.log(err);
       })
-      .finally(() => {
-        setIsLoading(false);
-      });
+      .finally(() => setIsLoading(false));
   }
 
   //Вход
@@ -120,8 +125,8 @@ function App() {
     setIsLoading(true);
     mainApi
       .editUserInfo(data)
-      .then(newUserData => {
-        setCurrentUser(newUserData);
+      .then(newData => {
+        setCurrentUser(newData);;
       })
       .catch((err) => {
         console.log(err);
@@ -154,7 +159,7 @@ function App() {
 
   return (
     isLoading ? <Preloader /> :
-    <CurrentUserContext.Provider value={{ currentUser }}>
+    <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <Header>
           <NavBar loggedIn={isLoggedIn} />
@@ -180,7 +185,7 @@ function App() {
             onDeleteCard={handleCardDelete}
             />}
           />
-          <Route path="/profile" element={ <ProtectedRoute element={Profile} loggedIn={isLoggedIn} updateProfile={updateProfile} logOut={logOut} currentUser={currentUser} />}/>
+          <Route path="/profile" element={ <ProtectedRoute element={Profile} loggedIn={isLoggedIn} updateProfile={updateProfile} logOut={logOut} />}/>
           <Route path="/*" element={<ErrorNotFound />}/>
         </Routes>
         <Footer />
