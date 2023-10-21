@@ -22,10 +22,7 @@ function SearchForm({ onSearchMoviesFilms, onFilterMovies, isShortFilm }) {
     }
 
     useEffect(() => {
-        if (
-          location.pathname === "/movies" &&
-          localStorage.getItem("movieSearch")
-        ) {
+        if (location.pathname === "/movies" && localStorage.getItem("movieSearch")) {
           const localQuery = localStorage.getItem("movieSearch")
           setQuery(localQuery)
         }

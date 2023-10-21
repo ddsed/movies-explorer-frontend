@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import Preloader from '../Preloader/Preloader';
+import { DISPLAY_BIG, DISPLAY_MEDIUM, SHOWN_MOVIES_BIG, SHOWN_MOVIES_MEDIUM, SHOWN_MOVIES_SMALL, EXTRA_MOVIES_BIG, EXTRA_MOVIES_MEDIUM } from '../../utils/constants';
 
 
 function MoviesCardList({cards, isLoading, isSavedFilms, savedMovies, isReqError, isNotFound, handleSaveMovie, onDeleteCard,}) {
@@ -10,12 +11,12 @@ function MoviesCardList({cards, isLoading, isSavedFilms, savedMovies, isReqError
 
   function shownCount() {
     const display = window.innerWidth
-    if (display > 1180) {
-      setShownMovies(12) 
-    } else if (display > 767) {
-      setShownMovies(8) 
+    if (display > DISPLAY_BIG) {
+      setShownMovies(SHOWN_MOVIES_BIG) 
+    } else if (display > DISPLAY_MEDIUM) {
+      setShownMovies(SHOWN_MOVIES_MEDIUM) 
     } else {
-      setShownMovies(5) 
+      setShownMovies(SHOWN_MOVIES_SMALL) 
     }
   }
 
@@ -31,12 +32,12 @@ function MoviesCardList({cards, isLoading, isSavedFilms, savedMovies, isReqError
 
   function showMore() {
     const display = window.innerWidth
-    if (display > 1180) {
-      setShownMovies(shownMovies + 3)
-    } else if (display > 767) {
-      setShownMovies(shownMovies + 2)
+    if (display > DISPLAY_BIG) {
+      setShownMovies(shownMovies + EXTRA_MOVIES_BIG)
+    } else if (display > DISPLAY_MEDIUM) {
+      setShownMovies(shownMovies + EXTRA_MOVIES_MEDIUM)
     } else {
-      setShownMovies(shownMovies + 2)
+      setShownMovies(shownMovies + EXTRA_MOVIES_MEDIUM)
     }
   }
 
@@ -47,6 +48,7 @@ function MoviesCardList({cards, isLoading, isSavedFilms, savedMovies, isReqError
   return (
     <section className="cards-list">
       {isLoading && <Preloader />}
+      {isNotFound && !isLoading && (<span className="cards-list__not-found-error">Ничего не найдено</span>)}
       {!isLoading && !isReqError && !isNotFound && (
         <>
           {location === "/saved-movies" ? (

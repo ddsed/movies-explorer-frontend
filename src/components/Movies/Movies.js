@@ -19,8 +19,8 @@ function Movies({ handleSaveMovie, onDeleteCard, savedMovies }) {
     const moviesCardList = filterMovies(movies, query, short)
     setInitialCardsMovies(moviesCardList)
     setFilteredMovies(short ? filterDuration(moviesCardList) : moviesCardList)
-    localStorage.setItem("allMovies", JSON.stringify(moviesCardList))
-    localStorage.setItem("movies", JSON.stringify(movies))
+    localStorage.setItem("movies", JSON.stringify(moviesCardList))
+    localStorage.setItem("allMovies", JSON.stringify(movies))
   }
 
   function handleShortFilmToggle() {
@@ -41,8 +41,8 @@ function Movies({ handleSaveMovie, onDeleteCard, savedMovies }) {
     localStorage.setItem("movieSearch", query)
     localStorage.setItem("shortMovies", isShortFilm)
 
-    if (localStorage.getItem("movies")) {
-      const movies = JSON.parse(localStorage.getItem("movies"))
+    if (localStorage.getItem("allMovies")) {
+      const movies = JSON.parse(localStorage.getItem("allMovies"))
       handleUpdateFilteredMovies(movies, query, isShortFilm)
     } else {
       setIsLoading(true)
