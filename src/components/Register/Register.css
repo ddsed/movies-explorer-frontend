@@ -64,10 +64,11 @@
 .register__input-error {
     color: #EE3465;
     font-size: 10px;
+    font-style: normal;
     font-weight: 400;
     line-height: normal;
 
-    margin: 10px 0 69px;
+    margin-top: 5px;
 }
 
 .register__button {
@@ -83,11 +84,23 @@
     font-size: 14px;
     font-weight: 500;
     line-height: normal;
+
+    margin-top: 69px;
 }
 
 .register__button:hover {
     opacity: 0.8;
     cursor: pointer;
+}
+
+.register__button_inactive {
+    background: #193159;
+    color: rgb(126, 124, 124);
+}
+
+.register__button.register__button_inactive:hover {
+    cursor: not-allowed;
+    opacity: 1;
 }
 
 .register__container {
@@ -100,7 +113,7 @@
 }
 
 .register__question {
-    color: #8B8B8B;
+    color: #ffffff;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -148,13 +161,11 @@
         margin: 45px 0 61px;
     }
 
-    .register__input-error {
-        margin-bottom: 157px;
-    }
-
     .register__button {
         font-size: 12px;
         font-weight: 500;
+
+        margin-top: 157px;
     }
 
     .register__container {

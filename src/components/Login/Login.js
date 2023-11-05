@@ -1,27 +1,21 @@
-import React, { useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import useForm from '../../hooks/useForm';
+import { PATTERN_EMAIL } from '../../utils/constants';
 
 import headerLogo from '../../images/header-logo.svg';
 
 
 const Login = ({ loginUser }) => {
 
-    const [loginForm, setLoginForm] = useState({
-        email: '',
-        password: ''
-    });
+    const { enteredValues, errors, handleChangeInput, isFormValid } = useForm();
 
-    const handleChange = (evt) => {
-        const input = evt.target;
-        setLoginForm({
-            ...loginForm,
-            [input.name]: input.value,
-        });
-    };
-
-    const handleSubmit = (evt) => {
+    function handleSubmit(evt) {
         evt.preventDefault();
-        loginUser(loginForm);
+        loginUser({
+            email: enteredValues.email,
+            password: enteredValues.password,
+        });
     }
 
     return(
@@ -34,11 +28,39 @@ const Login = ({ loginUser }) => {
                     <h1 className="login__form-title">Рады видеть!</h1>
                     
                     <label className="login__input-label">Email</label>
-                    <input className="login__input" placeholder="Введите свой email" value={loginForm.email} type="email" name="email" id="email" required onChange={handleChange}/>
+                    <input 
+                    className="login__input" 
+                    placeholder="Введите свой email" 
+                    value={enteredValues.email || ""} 
+                    type="email" 
+                    name="email" 
+                    id="email-input" 
+                    pattern = {PATTERN_EMAIL}
+                    required 
+                    onChange={handleChangeInput}
+                    />
+                    <span className="login__input-error">{errors.email}</span>
                     
                     <label className="login__input-label">Пароль</label>
-                    <input className="login__input" placeholder="Введите свой пароль" value={loginForm.password} type="password" name="password" id="password" minLength='2' maxLength='35' required onChange={handleChange}/>
-                    <button className="login__button" type="submit">Войти</button>
+                    <input 
+                    className="login__input" 
+                    placeholder="Введите свой пароль" 
+                    value={enteredValues.password || ""} 
+                    type="password" 
+                    name="password" 
+                    id="password-input" 
+                    minLength='2' 
+                    maxLength='35' 
+                    required 
+                    onChange={handleChangeInput}
+                    />
+                    <span className="login__input-error">{errors.password}</span>
+                    <button type="submit" disabled={!isFormValid ? true : false}
+                    className={
+                        !isFormValid
+                            ? "login__button login__button_inactive"
+                            : "login__button"
+                    }>Войти</button>
                 </form>
                 <div className='login__container'>
                     <p className='login__question'>Ещё не зарегистрированы?</p>

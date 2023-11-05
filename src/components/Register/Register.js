@@ -1,27 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import useForm from '../../hooks/useForm';
+import { PATTERN_EMAIL, PATTERN_NAME } from '../../utils/constants';
 
 import headerLogo from '../../images/header-logo.svg';
 
 
 const Register = ({ registerUser }) => {
-    const [registerForm, setRegisterForm] = useState({
-        name: '',
-        email: '',
-        password: ''
-    });
 
-    const handleChange = (evt) => {
-        const input = evt.target;
-        setRegisterForm({
-            ...registerForm,
-            [input.name]: input.value,
-        });
-    };
+    const { enteredValues, errors, handleChangeInput, isFormValid } = useForm();
 
-    const handleSubmit = (evt) => {
+    function handleSubmit(evt) {
         evt.preventDefault();
-        registerUser(registerForm);
+        registerUser({
+            name: enteredValues.name,
+            email: enteredValues.email,
+            password: enteredValues.password,
+        });
     }
 
     return(
@@ -32,17 +27,58 @@ const Register = ({ registerUser }) => {
                 </Link>
                 <form className="register__form" onSubmit={handleSubmit}>
                     <h1 className="register__form-title">Добро пожаловать!</h1>
+
                     <label className="register__input-label">Имя</label>
-                    <input className="register__input" placeholder="Введите свое имя" value={registerForm.name} type="text" name="name" id="name" minLength='2' maxLength='35' required onChange={handleChange}/>
+                    <input 
+                    className="register__input" 
+                    placeholder="Введите свое имя" 
+                    value={enteredValues.name || ""}
+                    pattern={PATTERN_NAME}
+                    type="text" 
+                    name="name" 
+                    id="name-input" 
+                    minLength='2' 
+                    maxLength='35' 
+                    required 
+                    onChange={handleChangeInput}
+                    />
+                    <span className="form__input-error">{errors.name}</span>
                     
                     <label className="register__input-label">Email</label>
-                    <input className="register__input" placeholder="Введите свой email" value={registerForm.email} type="email" name="email" id="email" required onChange={handleChange}/>
+                    <input 
+                    className="register__input" 
+                    placeholder="Введите свой email" 
+                    value={enteredValues.email || ""} 
+                    pattern={PATTERN_EMAIL}
+                    type="email" 
+                    name="email" 
+                    id="email-input" 
+                    required 
+                    onChange={handleChangeInput}
+                    />
+                    <span className="register__input-error">{errors.email}</span>
                     
                     <label className="register__input-label">Пароль</label>
-                    <input className="register__input" placeholder="Введите свой пароль" value={registerForm.password} type="password" name="password" id="password" minLength='2' maxLength='35' required onChange={handleChange}/>
-                    <span className='register__input-error'></span>
+                    <input 
+                    className="register__input"
+                    placeholder="Введите свой пароль" 
+                    value={enteredValues.password || ""}
+                    type="password" 
+                    name="password" 
+                    id="password-input" 
+                    minLength='2' 
+                    maxLength='35' 
+                    required 
+                    onChange={handleChangeInput}
+                    />
+                    <span className='register__input-error'>{errors.password}</span>
 
-                    <button className="register__button" type="submit">Зарегистрироваться</button>
+                    <button type="submit" disabled={!isFormValid ? true : false}
+                    className={
+                        !isFormValid
+                            ? "register__button register__button_inactive"
+                            : "register__button"
+                    }>Зарегистрироваться</button>
                 </form>
                 <div className='register__container'>
                     <p className='register__question'>Уже зарегистрированы?</p>
