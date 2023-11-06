@@ -14,6 +14,7 @@
 .card__info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 14px;
     margin-top: 10px;
 }
@@ -52,6 +53,8 @@
     position: absolute;
     top: 14px;
     right: 14px;
+
+    z-index: 2;
 }
 
 .card__button-saved:hover {
@@ -72,6 +75,7 @@
     position: absolute;
     top: 14px;
     right: 14px;
+    z-index: 1;
 }
 
 .card__button-to-save:hover {
@@ -80,7 +84,6 @@
 }
 
 .card__button-delete {
-    display: none;
     background: url(../../images/button-delete.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -93,6 +96,7 @@
     position: absolute;
     top: 14px;
     right: 14px;
+    z-index: 2;
 }
 
 .card__button-delete:hover {

@@ -1,13 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { filterMovies, filterDuration } from '../../utils/movies';
 
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 
-function SavedMovies({cards}) {
+function SavedMovies({ savedMovies, onDeleteCard }) {
+
+    const [filteredMovies, setFilteredMovies] = useState(savedMovies);
+    const [isShortFilm, setisShortFilm] = useState(false);
+    const [isNotFound, setIsNotFound] = useState(false);
+    const [searchQuery, setSearchQuery] = useState("");
+
+    function onSearchMoviesFilms(query) {
+        setSearchQuery(query)
+    }
+
+    function handleShortFilmToggle() {
+        setisShortFilm(!isShortFilm)
+    }
+
+    useEffect(() => {
+        const moviesCardList = filterMovies(savedMovies, searchQuery)
+        setFilteredMovies(
+          isShortFilm ? filterDuration(moviesCardList) : moviesCardList
+        )
+    }, [savedMovies, isShortFilm, searchQuery])
+
+    useEffect(() => {
+        if (filteredMovies.length === 0) {
+          setIsNotFound(true)
+        } else {
+          setIsNotFound(false)
+        }
+    }, [filteredMovies])
+
     return (
-        <main className="main">
-        <SearchForm />
-        <MoviesCardList cards={cards} />
+        <main className="main-saved-movies">
+            <SearchForm 
+                onSearchMoviesFilms={onSearchMoviesFilms}
+                onFilterMovies={handleShortFilmToggle}
+            />
+            <MoviesCardList         
+                isNotFound={isNotFound}
+                isSavedFilms={true}
+                cards={filteredMovies}
+                savedMovies={savedMovies}
+                onDeleteCard={onDeleteCard}
+            />
         </main>
     );
 }
