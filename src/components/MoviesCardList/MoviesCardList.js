@@ -48,7 +48,7 @@ function MoviesCardList({cards, isLoading, isSavedFilms, savedMovies, isReqError
   return (
     <section className="cards-list">
       {isLoading && <Preloader />}
-      {isNotFound && !isLoading && (<span className="cards-list__not-found-error">Ничего не найдено</span>)}
+      {isNotFound && !isLoading && (<span className="cards-list__not-found-error">No matches found</span>)}
       {!isLoading && !isReqError && !isNotFound && (
         <>
           {location === "/saved-movies" ? (
@@ -88,7 +88,7 @@ function MoviesCardList({cards, isLoading, isSavedFilms, savedMovies, isReqError
               <div className="cards-list__button-container">
                 {cards.length > shownMovies ? 
                 (
-                  <button className="cards-list__more-films-button" type="button" onClick={showMore}>Ещё</button>
+                  <button className="cards-list__more-films-button" type="button" onClick={showMore}>More</button>
                 ) 
                 : 
                 ("")

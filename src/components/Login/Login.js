@@ -25,12 +25,12 @@ const Login = ({ loginUser }) => {
                     <img src={headerLogo} className="login__home-logo" alt="Логотип" />
                 </Link>
                 <form className="login__form" onSubmit={handleSubmit}>
-                    <h1 className="login__form-title">Рады видеть!</h1>
+                    <h1 className="login__form-title">Good to see you!</h1>
                     
                     <label className="login__input-label">Email</label>
                     <input 
                     className="login__input" 
-                    placeholder="Введите свой email" 
+                    placeholder="Enter your email" 
                     value={enteredValues.email || ""} 
                     type="email" 
                     name="email" 
@@ -41,10 +41,10 @@ const Login = ({ loginUser }) => {
                     />
                     <span className="login__input-error">{errors.email}</span>
                     
-                    <label className="login__input-label">Пароль</label>
+                    <label className="login__input-label">Password</label>
                     <input 
                     className="login__input" 
-                    placeholder="Введите свой пароль" 
+                    placeholder="Enter your password" 
                     value={enteredValues.password || ""} 
                     type="password" 
                     name="password" 
@@ -60,11 +60,11 @@ const Login = ({ loginUser }) => {
                         !isFormValid
                             ? "login__button login__button_inactive"
                             : "login__button"
-                    }>Войти</button>
+                    }>Sign in</button>
                 </form>
                 <div className='login__container'>
-                    <p className='login__question'>Ещё не зарегистрированы?</p>
-                    <Link className='login__go-to-register' to='/signup'>Регистрация</Link>
+                    <p className='login__question'>Not registered yet?</p>
+                    <Link className='login__go-to-register' to='/signup'>Sign up</Link>
                 </div>
             </section> 
         </main>

@@ -48,10 +48,10 @@ function SearchForm({ onSearchMoviesFilms, onFilterMovies, isShortFilm }) {
                         <input type="checkbox" onChange={onFilterMovies} checked={isShortFilm}/>
                         <span className="search__checkbox-switch"></span>
                     </label>
-                    <label className="search__label">Короткометражки</label>
+                    <label className="search__label">Short movies</label>
                 </div>
             </form>
-            {isQueryError && (<span className="search__error">Введите ключевое слово</span>)}
+            {isQueryError && (<span className="search__error">Enter a key word</span>)}
         </section>
     );
 }

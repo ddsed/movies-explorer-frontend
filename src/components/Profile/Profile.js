@@ -40,10 +40,10 @@ function Profile({ isLoading, logOut, updateProfile }) {
         <main>
             <section className="profile">
                 <form id="form" className="profile__form" noValidate onSubmit={handleFormSubmit}>
-                    <h1 className="profile__title">Привет, {currentUser.name}!</h1>
+                    <h1 className="profile__title">Hi, {currentUser.name}!</h1>
                     <div className="profile__info">
                         <div className="profile__fields">
-                            <label className="profile__text" htmlFor="name-input">Имя</label>
+                            <label className="profile__text" htmlFor="name-input">Name</label>
                             <input 
                                 name="name"
                                 className="profile__input"
@@ -52,7 +52,7 @@ function Profile({ isLoading, logOut, updateProfile }) {
                                 minLength="2"
                                 maxLength="35"
                                 required
-                                placeholder="Ваше имя"
+                                placeholder="Your name"
                                 onChange={handleChangeInput}
                                 value={enteredValues.name || ""}
                                 pattern={PATTERN_NAME}
@@ -67,7 +67,7 @@ function Profile({ isLoading, logOut, updateProfile }) {
                                 id="email-input"
                                 type="email"
                                 required
-                                placeholder="Ваша почта"
+                                placeholder="Your email"
                                 onChange={handleChangeInput}
                                 pattern={PATTERN_EMAIL}
                                 value={enteredValues.email || ""} 
@@ -82,8 +82,8 @@ function Profile({ isLoading, logOut, updateProfile }) {
                             ? "profile__edit profile__edit_inactive"
                             : "profile__edit"
                         }
-                    >Редактировать</button>
-                        <Link to="/" className="profile__exit" onClick={logOut}>Выйти из аккаунта</Link >
+                    >Apply changes</button>
+                        <Link to="/" className="profile__exit" onClick={logOut}>Log out</Link >
                     </div>
                 </form>
             </section>

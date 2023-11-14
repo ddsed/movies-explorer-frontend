@@ -26,12 +26,12 @@ const Register = ({ registerUser }) => {
                     <img src={headerLogo} className="register__home-logo" alt="Логотип" />
                 </Link>
                 <form className="register__form" onSubmit={handleSubmit}>
-                    <h1 className="register__form-title">Добро пожаловать!</h1>
+                    <h1 className="register__form-title">Welcome!</h1>
 
-                    <label className="register__input-label">Имя</label>
+                    <label className="register__input-label">Name</label>
                     <input 
                     className="register__input" 
-                    placeholder="Введите свое имя" 
+                    placeholder="Enter your name" 
                     value={enteredValues.name || ""}
                     pattern={PATTERN_NAME}
                     type="text" 
@@ -47,7 +47,7 @@ const Register = ({ registerUser }) => {
                     <label className="register__input-label">Email</label>
                     <input 
                     className="register__input" 
-                    placeholder="Введите свой email" 
+                    placeholder="Enter your email" 
                     value={enteredValues.email || ""} 
                     pattern={PATTERN_EMAIL}
                     type="email" 
@@ -58,10 +58,10 @@ const Register = ({ registerUser }) => {
                     />
                     <span className="register__input-error">{errors.email}</span>
                     
-                    <label className="register__input-label">Пароль</label>
+                    <label className="register__input-label">Password</label>
                     <input 
                     className="register__input"
-                    placeholder="Введите свой пароль" 
+                    placeholder="Enter your password" 
                     value={enteredValues.password || ""}
                     type="password" 
                     name="password" 
@@ -78,11 +78,11 @@ const Register = ({ registerUser }) => {
                         !isFormValid
                             ? "register__button register__button_inactive"
                             : "register__button"
-                    }>Зарегистрироваться</button>
+                    }>Sign up</button>
                 </form>
                 <div className='register__container'>
-                    <p className='register__question'>Уже зарегистрированы?</p>
-                    <Link className='register__go-to-login' to='/signin'>Войти</Link>
+                    <p className='register__question'>Already registered?</p>
+                    <Link className='register__go-to-login' to='/signin'>Sign in</Link>
                 </div>
             </section> 
         </main>

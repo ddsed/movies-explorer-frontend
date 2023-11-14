@@ -6,11 +6,11 @@ function Promo() {
   return (
     <section className="promo">
       <div className="promo__container">
-        <h1 className="promo__title">Учебный проект студента факультета Веб-разработки.</h1>
+        <h1 className="promo__title">Junior frontend developer's project</h1>
         <nav className="promo__links-container">
-            <Link to="#about-project-section" className="promo__link">О проекте</Link>
-            <Link to="#techs-section" className="promo__link">Технологии</Link>
-            <Link to="#portfolio-section" className="promo__link">Студент</Link>
+            <Link to="#about-project-section" className="promo__link">About</Link>
+            <Link to="#techs-section" className="promo__link">Tech</Link>
+            <Link to="#portfolio-section" className="promo__link">Student</Link>
         </nav>
       </div>
     </section>
