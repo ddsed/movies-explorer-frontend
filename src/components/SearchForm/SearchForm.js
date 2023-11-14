@@ -37,7 +37,7 @@ function SearchForm({ onSearchMoviesFilms, onFilterMovies, isShortFilm }) {
                         className="search__input" 
                         id="search-input" 
                         type="text" 
-                        placeholder="Фильм"
+                        placeholder="Movie"
                         onChange={handleChangeInputQuery}
                         value={query || ""}
                     />
